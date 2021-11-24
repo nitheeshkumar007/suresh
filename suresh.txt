@@ -1,0 +1,71 @@
+select * from tab
+
+select * from theatre
+
+truncate table theatre;
+
+insert into theatre columns(sno,movie,ticket)values(1,'rrr',250);
+
+insert into theatre columns(sno,movie,ticket)values(2,'rebel',100);
+
+insert into theatre columns(sno,movie,ticket)values(3,'raja',150);
+
+
+update theatre 
+set movie='chanti' where sno=3;
+
+alter table theatre
+add loc varchar2(20);
+
+update theatre
+set loc='miyapur' where sno=1;
+
+alter table theatre
+add tname varchar2(10);
+
+
+update theatre
+set loc='nampally' where sno=2;
+
+update theatre
+set loc='mgbs' where sno=3;
+
+update theatre
+set tname='pvr' where sno=1;
+
+update theatre
+set tname='asian' where sno=3;
+
+update theatre1
+set SNO = 3 where movie ='chanti';
+
+select * from theatre1
+
+commit;
+
+
+create table theatre1 
+(sno number(2),movie varchar2(10),rdate date );
+
+select * from theatre1
+
+insert into theatre1 columns(sno,movie,rdate) values(2,'rrr','07-January-2021');
+
+insert into theatre1 (sno,movie,rdate) values (3,'rebel','08-jan-2021');
+
+insert into theatre1 (sno,movie,rdate) values (1,'chanti','08-jan-2021');
+commit;
+
+
+select theatre.movie, theatre1.rdate
+from theatre
+left join theatre1 on theatre.movie=theatre1.movie;
+
+
+
+
+
+
+
+
+select * from emp;
